@@ -31,6 +31,13 @@ return {
 
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
+				settings = {
+   					 Lua = {
+     						 diagnostics = {
+       						 globals = {'vim'}
+     				 		}
+   						}
+ 				 }
 			})
 
 			lspconfig.emmet_ls.setup({
