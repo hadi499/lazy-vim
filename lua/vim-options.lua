@@ -15,3 +15,6 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
+--commet shorcut
+vim.api.nvim_set_keymap('n', '<leader>/', 'gcc', { noremap = false, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>/', 'gc', { noremap = false, silent = true })
