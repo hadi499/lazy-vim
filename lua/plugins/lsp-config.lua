@@ -29,6 +29,21 @@ return {
 				capabilities = capabilities,
 			})
 
+			lspconfig.volar.setup {
+				-- add filetypes for typescript, javascript and vue
+				filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+				init_options = {
+					vue = {
+						-- disable hybrid mode
+						hybridMode = false,
+					},
+					typescript = {
+						-- replace with your global TypeScript library path
+						tsdk = '/home/hadi/.nvm/versions/node/v20.18.2/lib/node_modules/typescript/lib'
+					}
+				},
+			}
+
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 				settings = {
