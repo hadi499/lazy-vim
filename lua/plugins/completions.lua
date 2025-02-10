@@ -35,7 +35,15 @@ return {
           ["<S-Tab>"] = cmp.mapping.select_prev_item(),
         }),
         sources = cmp.config.sources({
-          { name = "nvim_lsp" },
+          {
+            name = "nvim_lsp",
+            -- Filter untuk menghapus snippet HTML dari Volar
+            entry_filter = function(entry, ctx)
+              local kind = entry:get_kind()
+              return kind ~= cmp.lsp.CompletionItemKind.Text -- Hapus snippet
+            end,
+
+          },
           { name = "luasnip" }, -- For luasnip users.
         }, {
           { name = "buffer" },
